@@ -57,10 +57,11 @@ class bagian extends Controller
      */
     public function show($id)
     {
-        $customPaper = array(0,0,230,128);
+        set_time_limit(0);
+        $customPaper = array(0,0,300,115);
         $details = ModelInventaris::where('id',$id)->get();
         $pdf = PDF::loadView('print', ['details'=>$details])->setPaper($customPaper);
-        return $pdf->stream('demo.pdf');
+       	return $pdf->stream();
     }
     
     public function print()

@@ -51,8 +51,8 @@
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
-                font-size: 10px;
-                font-weight: 100;
+                font-size: 13px;
+                font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
@@ -67,8 +67,7 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    Data tidak ditemukan!
-                    <a href="javascript:javascript:history.go(-1)">kembali</a>
+                    Error 404 Not Found!
                 </div>
             </div>
         </div>

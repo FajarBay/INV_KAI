@@ -50,7 +50,9 @@
         </li>
       </ul>
       <ul class="nav navbar-nav ml-auto">
-        
+      <li class="nav-item d-md-down-none">
+        <a class="nav-link mr-5 font-weight-bold" href="{{ url('/logout') }}"> Keluar </a>
+      </li>
       </ul>
       
     </header>
@@ -97,7 +99,6 @@
                     Data Inventaris
                 </div>
                 <div class="card-body">
-                    <br/>
                     <br/>
                     <form autocomplete="off" action="{{ route('tabel.store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}

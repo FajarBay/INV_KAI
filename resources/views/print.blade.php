@@ -2,8 +2,14 @@
 <html>
     <head>
         <style>
-        @page { margin: 10px 1px 1px 1px;
-            z-index: -999;  }
+        @page { margin: 25px 10px 5px 65px;
+            z-index: 1;  }
+            header {
+                position: fixed;
+                top: 0cm;
+                left: 0cm;
+                right: 0cm;
+            }
         </style>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,14 +19,15 @@
         <title>Sistem Pendataan Inventaris</title>
     </head>
     <body>
+    <header>
         @foreach($details as $datas)
-            <table class="table table-bordered mx-auto" style="width:290px;font-size:10pt;">
+            <table class="table table-bordered mx-auto" style="width:330px;font-size:10pt;">
                 <tbody>
                 <tr>
                     <th colspan="2" class="table-sm mx-auto text-center align-middle">
                         <?php
                         $data = $datas->no_inventaris;
-                        echo '<img class="text-center" src="data:image/png;base64,' . DNS1D::getBarcodePNG("$data", "C128",0.8,20) . '" alt="barcode"   />';
+                        echo '<img class="text-center" src="data:image/png;base64,' . DNS1D::getBarcodePNG("$data", "C128",0.95,20) . '" alt="barcode"   />';
                         ?>
                     </th>
                 </tr>
@@ -28,7 +35,7 @@
                     <td class="text-center align-middle" style="width:30%">
                     <img src="{{ public_path('/assets/img/brand/kai_logo.svg.png')}}" width="40" height="25">
                     </td>
-                    <th class="align-middle font-weight-bold" style="padding-left:10px;font-size:5pt;">JENIS BARANG: {{ $datas->nama_barang }}</th>
+                    <th class="align-middle font-weight-bold" style="padding-left:10px;font-size:6pt;">JENIS BARANG: {{ $datas->nama_barang }}</th>
                     <tr class="table-sm">
                         <th colspan="2" class="font-weight-bold text-center" style="font-size:7pt;">
                         {{ $datas->no_inventaris }}
@@ -39,5 +46,6 @@
                 </tbody>
             </table>
         @endforeach 
+        </header>
     </body>
 </html>

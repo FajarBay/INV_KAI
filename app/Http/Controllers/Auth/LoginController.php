@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/tabel';
+    protected $redirectTo = '/tambah';
 
     /**
      * Create a new controller instance.

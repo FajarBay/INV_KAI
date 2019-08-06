@@ -51,7 +51,9 @@
         </li>
       </ul>
       <ul class="nav navbar-nav ml-auto">
-        
+      <li class="nav-item d-md-down-none">
+        <a class="nav-link mr-5 font-weight-bold" href="{{ url('/logout') }}"> Keluar </a>
+      </li>
       </ul>
       
     </header>
@@ -110,7 +112,7 @@
                         </div>
                     </form>
                 <br>
-            <table class="table table-bordered small">
+            <table class="table table-bordered small table-striped">
                 <thead>
                     <tr>
                         <th>No.</th>

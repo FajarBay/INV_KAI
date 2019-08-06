@@ -52,34 +52,7 @@
       </ul>
       <ul class="nav navbar-nav ml-auto">
       <li class="nav-item d-md-down-none">
-      @guest
-          <li class="nav-item">
-              <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-          </li>
-          @if (Route::has('register'))
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-              </li>
-          @endif
-      @else
-          <li class="nav-item px-3">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                  {{ Auth::user()->name }} <span class="caret"></span>
-              </a>
-
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ route('logout') }}"
-                      onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                      {{ __('Logout') }}
-                  </a>
-
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      @csrf
-                  </form>
-              </div>
-          </li>
-      @endguest
+      <a class="nav-link mr-5 font-weight-bold" href="{{ url('/logout') }}"> Keluar </a>
       </li>
       </ul>
       
@@ -139,7 +112,7 @@
                     </div>
                 </form>
                 <br>
-            <table class="table table-bordered small">
+            <table class="table table-bordered small table-striped">
                 <thead>
                     <tr>
                         <th>No.</th>
@@ -165,7 +138,7 @@
                         <td>Rp{{ $d->harga_barang_item }}</td>
                         <td>{{ $d->bagian }}</td>
                         <td>{{ $d->kedudukan }}</td>
-                        <td>
+                        <td class="mx-auto">
                             <form action="{{ route('bagian.destroy', $d->id) }}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}

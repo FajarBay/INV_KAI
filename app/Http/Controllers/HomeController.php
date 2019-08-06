@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('tabel');
+        return view('tambah');
     }
 
     public function demoGeneratePDF($id)

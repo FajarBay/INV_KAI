@@ -65,7 +65,7 @@ class kai extends Controller
     public function show($id)
     {
         set_time_limit(0);
-        $customPaper = array(0,0,230,128);
+        $customPaper = array(0,0,280,178);
         
 
         $details = ModelInventaris::where('id',$id)->get();
