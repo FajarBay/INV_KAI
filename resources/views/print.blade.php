@@ -16,7 +16,7 @@
         <link href="{{ public_path('/assets/node_modules/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
         <link href="{{ public_path('/assets/css/style.css')}}" rel="stylesheet">
         <link href="{{ public_path('/assets/vendors/pace-progress/css/pace.min.css')}}" rel="stylesheet">
-        <title>Sistem Pendataan Inventaris</title>
+        <title>SINKA</title>
     </head>
     <body>
     <header>

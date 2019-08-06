@@ -43,9 +43,9 @@
                         {{ csrf_field() }}
 
                         <div class="wrap-input100 validate-input m-b-26{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="label-input100">E-Mail Address</label>
+                            <label for="email" class="label-input100">NIPP</label>
                             <div>
-                                <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" required autocomplete="off" autofocus placeholder="Enter email address">
+                                <input id="email" type="name" class="input100" name="email" value="{{ old('email') }}" required autocomplete="off" autofocus placeholder="Enter Username or NIPP">
 								<span class="focus-input100"></span>  
                             </div>
                         </div>

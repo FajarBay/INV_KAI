@@ -9,7 +9,7 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>Sistem Pendataan Inventaris</title>
+    <title>SINKA</title>
     <!-- Icons-->
     <link rel="icon" type="image/png" href="{{('/assets/img/logokai.png')}}" sizes="any" />
     <link href="{{('/assets/node_modules/@coreui/icons/css/coreui-icons.min.css')}}" rel="stylesheet">
@@ -19,20 +19,9 @@
     <!-- Main styles for this application-->
     <link href="{{('/assets/css/style.css')}}" rel="stylesheet">
     <link href="{{('/assets/vendors/pace-progress/css/pace.min.css')}}" rel="stylesheet">
-    <!-- Global site tag (gtag.js) - Google Analytics-->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      // Shared ID
-      gtag('config', 'UA-118965717-3');
-      // Bootstrap ID
-      gtag('config', 'UA-118965717-5');
-    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics-->
     
   </head>
   <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -40,13 +29,13 @@
       <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="/tabel">
+      <a class="navbar-brand">
         <img class="navbar-brand-full" src="{{('/assets/img/brand/logoresmi.png')}}" width="150" height="40" alt="KAI Logo" href="/tabel">
         
       </a>
       <ul class="nav navbar-nav d-md-down-none">
         <li class="nav-item px-5">
-          <a class="nav-link" href="/tabel">Sistem Pendataan Inventaris</a>
+          <a class="nav-link">Sistem Inventaris Kereta Api</a>
         </li>
       </ul>
       <ul class="nav navbar-nav ml-auto">
@@ -63,21 +52,21 @@
           <li class="nav-title">Tambah Data</li>
             <li class="nav-item">
               <a class="nav-link" href="/tambah">
-                <i class="nav-icon icon-speedometer"></i> Tambah        
+                <i class="nav-icon fa fa-plus-square" style="color:white"></i> Tambah        
               </a>
             </li>
             <li class="nav-title">Data</li>
             <li class="nav-item">
               <a class="nav-link" href="/tahun">
-                <i class="nav-icon icon-drop"></i> Tahun</a>
+                <i class="nav-icon fa fa-calendar" style="color:white"></i> Tahun</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/bagian">
-                <i class="nav-icon icon-pencil"></i> Bagian</a>
+                <i class="nav-icon fa fa-puzzle-piece" style="color:white"></i> Bagian</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/kedudukan">
-                <i class="nav-icon icon-pencil"></i> Kedudukan</a>
+                <i class="nav-icon fa fa-building" style="color:white"></i> Kedudukan</a>
             </li>
             
               </ul>
@@ -89,7 +78,7 @@
       <main class="main">
         <div class="container-fluid">
               <div class="container">
-            <div class="card mt-4">
+            <div class="card mt-3">
             @if(Session::has('alert-success'))
                 <div class="alert alert-warning">
                     <strong>{{ \Illuminate\Support\Facades\Session::get('alert-success') }}</strong>
