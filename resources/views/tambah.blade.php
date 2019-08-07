@@ -85,7 +85,7 @@
                 </div>
             @endif
                 <div class="card-header text-center">
-                    Data Inventaris
+                    Tambah Data Inventaris
                 </div>
                 <div class="card-body">
                     <br/>

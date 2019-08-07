@@ -19,24 +19,13 @@
     <!-- Main styles for this application-->
     <link href="{{('/assets/css/style.css')}}" rel="stylesheet">
     <link href="{{('/assets/vendors/pace-progress/css/pace.min.css')}}" rel="stylesheet">
-    <!-- Global site tag (gtag.js) - Google Analytics-->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      // Shared ID
-      gtag('config', 'UA-118965717-3');
-      // Bootstrap ID
-      gtag('config', 'UA-118965717-5');
-    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics-->
     
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Sistem Pendataan Inventaris</title>
+        <title>SINKA</title>
     
   </head>
   <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -50,7 +39,7 @@
       </a>
       <ul class="nav navbar-nav d-md-down-none">
         <li class="nav-item px-5">
-          <a class="nav-link" href="/tabel">Sistem Pendataan Inventaris</a>
+          <a class="nav-link" href="/tabel">Sistem Inventaris Kereta Api</a>
         </li>
       </ul>
       <ul class="nav navbar-nav ml-auto">
@@ -65,21 +54,21 @@
           <li class="nav-title">Tambah Data</li>
             <li class="nav-item">
               <a class="nav-link" href="/tambah">
-                <i class="nav-icon icon-speedometer"></i> Tambah        
+                <i class="nav-icon fa fa-plus-square" style="color:white"></i> Tambah        
               </a>
             </li>
             <li class="nav-title">Data</li>
             <li class="nav-item">
               <a class="nav-link" href="/tahun">
-                <i class="nav-icon icon-drop"></i> Tahun</a>
+                <i class="nav-icon fa fa-calendar" style="color:white"></i> Tahun</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/bagian">
-                <i class="nav-icon icon-pencil"></i> Bagian</a>
+                <i class="nav-icon fa fa-puzzle-piece" style="color:white"></i> Bagian</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/kedudukan">
-                <i class="nav-icon icon-pencil"></i> Kedudukan</a>
+                <i class="nav-icon fa fa-building" style="color:white"></i> Kedudukan</a>
             </li>
             
               </ul>
@@ -89,56 +78,73 @@
         </nav>
       </div>
       <main class="main">
-    <br>
         <div class="container-fluid">
             <!-- /.row-->
               
             <div class="container">
-            <div class="card mt-5">
+            <div class="card mt-3">
                 <div class="card-header text-center">
-                    Data Inventaris
+                    Edit Data Inventaris
                 </div>
                 <div class="card-body">
                 @foreach($details as $datas)
             <form action="{{ route('bagian.update', $datas->id) }}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
-                <div class="form-group">
-                    <label for="nama_barang">Nama Barang:</label>
-                    <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="{{ $datas->nama_barang }}">
-                </div>
-                <div class="form-group">
-                    <label for="no_inventaris">No Inventaris:</label>
-                    <input type="no_inventaris" class="form-control" id="no_inventaris" name="no_inventaris" value="{{ $datas->no_inventaris }}">
-                </div>
-                <div class="form-group">
-                    <label for="jumlah">Jumlah:</label>
-                    <input type="text" class="form-control" id="jumlah" name="jumlah" value="{{ $datas->jumlah }}">
-                </div>
-                <div class="form-group">
-                    <label for="satuan">Satuan:</label>
-                    <input type="text" class="form-control" id="satuan" name="satuan" value="{{ $datas->satuan }}">
-                </div>
-                <div class="form-group">
-                    <label for="harga_barang_item">Harga Barang/Item:</label>
-                    <input type="text" class="form-control" id="harga_barang_item" name="harga_barang_item" value="{{ $datas->harga_barang_item }}">
-                </div>
-                <div class="form-group">
-                    <label for="bagian">Bagian:</label>
-                    <input type="text" class="form-control" id="bagian" name="bagian" value="{{ $datas->bagian }}">
-                </div>
-                <div class="form-group">
-                    <label for="kedudukan">Kedudukan:</label>
-                    <input type="text" class="form-control" id="kedudukan" name="kedudukan" value="{{ $datas->kedudukan }}">
-                </div>
-                <div class="form-group">
-                    <label for="tahun">Tahun:</label>
-                    <input type="text" class="form-control" id="tahun" name="tahun" value="{{ $datas->tahun }}">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-md btn-primary">Submit</button>
-                    <a href="javascript:javascript:history.go(-1)" class="btn btn-md btn-danger">Cancel</a>
-                </div>
+                    <div class="form-group row">
+                        <label for="nama_barang" class="col-sm-3 col-form-label">Nama Barang</label>
+                        <div class="col-sm-9">
+                            <input autocomplete="off" name="nama_barang" type="text" class="form-control" id="nama_barang" value="{{ $datas->nama_barang }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="no_inventaris" class="col-sm-3 col-form-label">No Inventaris</label>
+                        <div class="col-sm-9">
+                            <input autocomplete="off" name="no_inventaris" type="text" class="form-control" id="no_inventaris" value="{{ $datas->no_inventaris }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="jumlah" class="col-sm-3 col-form-label">Jumlah</label>
+                        <div class="col-sm-9">
+                            <input autocomplete="off" name="jumlah" type="text" class="form-control" id="jumlah" value="{{ $datas->jumlah }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="satuan" class="col-sm-3 col-form-label">Satuan</label>
+                        <div class="col-sm-9">
+                            <input autocomplete="off" name="satuan" type="text" class="form-control" id="satuan" value="{{ $datas->satuan }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="harga_barang_item" class="col-sm-3 col-form-label">Harga Barang/Item</label>
+                        <div class="col-sm-9">
+                            <input autocomplete="off" name="harga_barang_item" type="text" class="form-control" id="harga_barang_item" value="{{ $datas->harga_barang_item }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="bagian" class="col-sm-3 col-form-label">Bagian</label>
+                        <div class="col-sm-9">
+                            <input autocomplete="off" name="bagian" type="text" class="form-control" id="bagian" value="{{ $datas->bagian }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="kedudukan" class="col-sm-3 col-form-label">Kedudukan</label>
+                        <div class="col-sm-9">
+                            <input autocomplete="off" name="kedudukan" type="text" class="form-control" id="kedudukan" value="{{ $datas->kedudukan }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="tahun" class="col-sm-3 col-form-label">Tahun</label>
+                        <div class="col-sm-9">
+                            <input autocomplete="off" name="tahun" type="text" class="form-control" id="tahun" value="{{ $datas->tahun }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-sm-3 col-sm-9">
+                            <button type="submit" class="btn btn-success">Simpan</button>
+                            <a href="javascript:javascript:history.go(-1)" class="btn btn-md btn-danger">Batal</a>
+                        </div>
+                    </div>
             </form>
             @endforeach
             </div>

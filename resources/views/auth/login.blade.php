@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-	<title>Sistem Pendataan Inventaris</title>
+	<title>SINKA</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -76,12 +76,6 @@
 								<label class="label-checkbox100" for="ckb1">
 									Remember me
 								</label>
-							</div>
-
-							<div>
-								<a href="{{ route('password.request') }}" class="txt1">
-									Forgot Password?
-								</a>
 							</div>
 						</div>
 
